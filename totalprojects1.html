@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Total projects</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<style type="text/css">
+		body{
+			height:100vh;
+
+			display: flex;
+			
+		}
+
+		a{
+			width:100px;
+			text-decoration: none;
+			font-size: 20px;
+			color: #fff;
+			background-color: steelblue;
+			padding: 20px 40px;
+			border-radius: 20px;
+			margin-bottom: 20px;
+
+			box-shadow: 0 8px 2px gray;
+
+			display: flex;
+			justify-content: flex-start;
+			align-items: flex-start;
+		}
+
+		a:active{
+			background-color: gray;
+			box-shadow: 0 5px 0 black;
+			transform: translateY(4px);
+		}
+
+		/*...................................................*/
+
+		.hover1{
+			/*display: block;*/
+			border: 5px solid #000;
+			padding: 40px 80px;
+			margin-bottom: 20px;
+
+			overflow: hidden;
+
+			position: relative;
+			z-index: 0;
+		}
+
+		.hover1::before{
+			content: " ";
+
+			width:100%;
+			height: 100%;
+			background-color: steelblue;
+
+			position: absolute;
+			left:0;
+			top:0;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			transform: rotate(90deg);
+			transform-origin: right bottom;
+
+			transition: transform 1s;
+
+			/*z-index: -1;*/
+		}
+
+		.hover1:hover::before{
+			transform: rotate(0deg);
+		}
+
+		/*............................................................*/
+
+		.hover2{
+			/*display: block;*/
+			background-color: none;
+			border: 5px solid #000;
+			padding: 40px 80px;
+			margin-bottom: 20px;
+
+			overflow: hidden;
+
+			position: relative;
+			z-index: 0;
+		}
+
+		.hover2::before{
+			content: " ";
+
+			width:100%;
+			height: 100%;
+			background-color: steelblue;
+
+			position: absolute;
+			left:0;
+			top:0;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			transform: translate(-100%,-100%);
+
+			transition: transform 1s;
+
+			/*z-index: -1;*/
+		}
+
+		.hover2:hover::before{
+			transform: translate(0);
+		}
+
+		/*.....................................................*/
+
+		.hover3{
+			/*display: block;*/
+			/*background-color: steelblue;*/
+			border: 5px solid #000;
+			padding: 40px 80px;
+			margin-bottom: 20px;
+
+			overflow: hidden;
+
+			position: relative;
+			z-index: 0;
+		}
+
+		.hover3::before{
+			content: "press me";
+
+			width:100%;
+			height: 100%;
+			font-size: 20px;
+			background-color: steelblue;
+			color: #000;
+
+			position: absolute;
+			left:0;
+			top:0;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			transform: scale(5);
+			opacity: 0;
+
+			transition: all 1s;
+
+			/*z-index: -1;*/
+		}
+
+		.hover3:hover::before{
+			transform: scale(1);
+			opacity: 1;
+		}
+
+		.hover3:active::before{
+			content: "Thank you";
+			color:#000;
+		}
+
+		/*........................................................................*/
+
+		.hover4{
+			/*display: block;*/
+			border: 5px solid #000;
+			padding: 40px 80px;
+			margin-bottom: 20px;
+
+			overflow: hidden;
+
+			position: relative;
+		}
+
+		.hover4::before{
+			content: "hover me";
+
+			width:100%;
+			height: 100%;
+			font-size: 20px;
+			background-color: steelblue;
+			color: #000;
+
+			position: absolute;
+			left:0;
+			top:0;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.hover4::after{
+			content: "press me";
+
+			width:100%;
+			height: 100%;
+			font-size: 20px;
+			background-color: yellow;
+			color: #000;
+
+			position: absolute;
+			left:0;
+			top:0;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			transform: scale(0);
+
+			transition: all 1s;
+		}
+
+		.hover4:hover::before{
+			transform: scale(0);
+			
+		}
+
+		.hover4:hover::after{
+			transform: scale(1);
+			
+		}
+
+		/*.....................................................................*/
+
+		.hover5{
+			border: 5px solid #000;
+			padding: 40px 80px;
+			margin-bottom: 20px;
+
+			overflow: hidden;
+			position: relative;
+		}
+
+		.hover5::before{
+			content: "hover me";
+
+			width:100%;
+			height:100%;
+			font-size: 20px;
+			background-color: steelblue;
+			color:#fff;
+
+			position: absolute;
+			left:0;
+			bottom: 0;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			transform: translateX(0);
+			transition: all 1s;
+		}
+
+		.hover5::after{
+			content: "thank you";
+
+			width:100%;
+			height:100%;
+			font-size: 20px;
+			background-color: yellow;
+			color:blue;
+
+			position: absolute;
+			top:0;
+			left:0;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			transform: translateX(-100%);
+			transition: all 1s;
+		}
+
+		.hover5:hover::before{
+			transform: translateX(100%);
+		}
+
+		.hover5:hover::after{
+			transform: translateX(0);
+		}
+
+		/*..............................................................*/
+
+		.hover6{
+			border: 5px solid #000;
+			padding: 40px 80px;
+			margin-bottom: 20px;
+
+			overflow: hidden;
+			position: relative;
+		}
+
+		.hover6::before{
+			content: "hover me";
+
+			width:100%;
+			height:100%;
+			font-size: 20px;
+			background-color: steelblue;
+			color:#fff;
+
+			position: absolute;
+			left:0;
+			bottom: 0;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			transform: translateX(0);
+			transition: all 1s;
+
+			z-index: 1;
+		}
+
+		.hover6::after{
+			content: "press";
+
+			width:100%;
+			height:100%;
+			font-size: 20px;
+			background-color: yellow;
+			color:blue;
+
+			position: absolute;
+			top:0;
+			left:0;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			transform: translateX(0%);
+			transition: all 1s;
+		}
+
+		.hover6:hover::before{
+			content: "me";
+			transform: translateX(50%);
+			justify-content: flex-start;
+			padding-left: 2px;
+		}
+
+		.hover6:hover::after{
+			transform: translateX(-50%);
+			justify-content: flex-end;
+			padding-right: 2px;
+		}
+
+		.hover6:active::before{
+			content: "you";
+		}
+
+		.hover6:active::after{
+			content: "Thank";
+		}
+
+		/*..............................................................*/
+
+		.hover7{
+			background-color: #000;
+			color:steelblue;
+			border: 5px solid red;
+			padding: 40px 80px;
+
+			position:relative;
+		}
+
+		.hover7::before{
+			content: '';
+
+			width:100%;
+			height: 30%;
+
+			border-radius: 0 0 100% 0;
+			background-color: #fff;
+
+			position:absolute;
+			left:0;
+			top:0;
+
+			transition: all 1s;
+
+		}
+
+		.hover7:hover::before{
+			
+			height:100%;
+			border-radius: 0 0 0 100%;
+		}
+
+		.hover7:hover{
+			color: #000;
+		}
+
+
+		/*.................................................................*/
+
+		.hover8{
+			background-color: none;
+			color:steelblue;
+			border: 5px solid #000;
+			padding: 40px 80px;
+
+			position:relative;
+
+		}
+
+		.hover8::before{
+			content:'';
+
+			width:100%;
+			height:100%;
+
+			background:linear-gradient(
+				90deg,
+				blue 30%,
+				red 
+				);
+
+			position: absolute;
+			top:0;
+			left:0;
+
+			transition: all 1s;
+		}
+
+		.hover8:hover::before{
+			background:linear-gradient(
+				270deg,
+				blue 30%,
+				red
+				);
+		}
+
+		/*.................................................*/
+
+		.hover9{
+			background-color: red;
+			padding: 40px 80px;
+			border:5px solid #000;
+			position: relative;
+
+			overflow: hidden;
+		}
+
+		.hover9::before{
+			content:'';
+
+			width:100%;
+			height: 100%;
+			background:linear-gradient(
+				20deg,
+				transparent 70%,
+				yellow 30%
+				);
+			background-size: 20px;
+
+			clip-path: ellipse(50% 100%);
+
+			position: absolute;
+			top:0;
+			left:0;
+
+			transform: translateY(-100%);
+			transition: all 1s;
+		}
+
+		.hover9::after{
+			content:'';
+
+			width:100%;
+			height: 100%;
+			background:linear-gradient(
+				200deg,
+				transparent 70%,
+				yellow 30%
+				);
+			background-size: 20px;
+
+			clip-path: ellipse(50% 100%);
+
+
+			position: absolute;
+			top:0;
+			left:0;
+
+			transform: translateY(100%);
+			transition: all 1s;
+		}
+
+		.hover9:hover::before,.hover9:hover::after{
+			transform: translateY(0);
+		}
+
+		.hover9:hover{
+			background-color: #000;
+			color: #fff;
+		}
+
+		/*.................................................*/
+		.hover10{
+			padding: 40px 80px;
+			border:5px solid #000;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.hover10::before{
+			content:'press me';
+
+			width:100%;
+			height:100%;
+
+			background: linear-gradient(
+				90deg,
+				red 30%,
+				transparent 40%
+				);
+			color:#fff;
+
+
+			background-size: 20px;
+
+			position:absolute;
+			left:0;
+			top:0;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			transform: translate(100%);
+			transition: all 1s;
+		}
+
+		.hover10:hover::before{
+			transform: translate(0);
+		}
+
+		.hover10:hover{
+
+			background-color: #000;
+		}
+
+		.hover10::after{
+			content:'';
+
+			width:100%;
+			height:100%;
+			color:#fff;
+
+			position:absolute;
+			left:0;
+			top:0;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			transform: scale(0);
+			transition: all 1s;
+		}
+
+		.hover10:active::before{
+			content: "";
+			transform: translateY(-110%);
+		}
+
+
+
+		.hover10:active::after{
+			content:'Thank You';
+			transform: scale(1) rotate(360deg);
+
+		}
+
+		/*.................................................................*/
+
+		.hover11{
+			padding: 40px 80px;
+			border:5px solid #000;
+			background-color: skyblue;
+			position: relative;
+		}
+
+		.hover11::before{
+			content: "Thank you";
+			width: 100%;
+			height:100%;
+			color:#fff;
+
+			background-color: steelblue;
+
+			position:absolute;
+			top:0;
+			left:0;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			transform: rotateY(90deg);
+			transform-origin: center;
+			transition: all 1s;
+
+			/*z-index: -1;*/
+		}
+
+		.hover11:hover::before{
+			transform: rotateY(0);
+		}
+
+		/*................................................*/
+
+		.hover12{
+			padding: 40px 80px;
+			border:5px solid #000;
+			background-color: skyblue;
+			position: relative;
+		}
+
+		.hover12::before{
+			content:"hover me";
+
+			width:100%;
+			height:100%;
+			color:#fff;
+
+			background: linear-gradient(
+				40deg,
+				red 30%,
+				black 70%);
+			background-size: 13px;
+
+			position: absolute;
+			left:0;
+			top:0;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			transition: all 1s;
+
+		}
+
+		.hover12:hover::before{
+			color:red;
+			background-size: 15px;
+			background-position: right;
+		}
+
+		/*.......................................................*/
+
+		.hover13{
+			padding: 40px 80px;
+			border:5px solid #000;
+			position: relative;
+		}
+
+		.hover13::before{
+			content:"hover me";
+
+			width:100%;
+			height:100%;
+
+			background-color: #444;
+
+			position: absolute;
+			left:0;
+			top:0;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			transform: rotateX(90deg);
+			transform-origin: bottom;
+			opacity: 0;
+			transition: all 1s;
+
+		}
+
+		.hover13:hover::before{
+			transform: rotateX(0deg);
+			opacity: 1;
+			color: #fff;
+		}
+
+		/*...........................................................*/
+
+		.hover14{
+			padding: 40px 80px;
+			border:5px solid #000;
+			position: relative;
+		}
+
+		.hover14::before{
+			content: "Thank You";
+
+			width:100%;
+			height: 100%;
+
+			background-color: #444;
+
+			position: absolute;
+			left:0;
+			top:0;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			transform: scaleX(0);
+			opacity:0;
+
+			transition: all 1s;
+
+			z-index: 1;
+		}
+
+		.hover14::after{
+			content: "";
+
+			width:100%;
+			height: 100%;
+
+			background-color: #444;
+
+			position: absolute;
+			left:0;
+			top:0;
+
+			transform: scaleY(0);
+			opacity: 0;
+			transition: all 1s;
+		}
+
+		.hover14:hover::before{
+			opacity: 1;
+			transform: scale(1);
+
+			color:#fff;
+		}
+
+		.hover14:hover::after{
+			opacity: 1;
+			transform: scale(1);
+		}
+
+		/*...........................................................*/
+
+		/*Button Effect*/
+
+		.button1{
+			width:200px;
+			padding: 20px 50px;
+			background-color:green; 
+			/*position: relative;*/
+			border: none;
+			text-align: center;
+		}
+
+		.button1 span{
+			position: relative;
+
+			transition: padding-right 1s;
+		}
+
+		.button1:hover span{
+			padding-right: 30px;
+		}
+
+		.button1 span::before{
+			content:"\f118";
+			font-family: "Font Awesome 5 Free";
+
+			width:100%;
+			height: 100%;
+
+			background-color: green;
+
+			position: absolute;
+			left:0;
+			top:0;
+
+			opacity:0;
+
+			transition: all 1s;
+
+		}
+
+		.button1:hover span::before{
+			opacity: 1;
+		}
+
+		/*...............................................................*/
+
+		.btn{
+			color: #fff;
+			padding: 20px 60px;
+			margin:20px;
+			border:none;
+			cursor: pointer;
+
+			position: relative;
+		}
+
+		.btn::before{
+			content:"";
+			font-family: "Font Awesome 5 Free";
+
+			width: 50px;
+			height: 100%;
+
+			position: absolute;
+			left:0;
+			top:0;
+
+			line-height: 3;
+
+		}
+
+		.upload-btn::before{
+			content: "\f103";
+			background-color:  #0783a6;
+		}
+
+		.upload-btn{
+			background-color: #8525d9;
+		}
+
+		.upload-btn:hover{
+			background-color: #6606ba;
+		}
+
+		.upload-btn:active{
+			background-color: #440f73;
+		}
+
+
+		.upload-btn::before{
+			content: "\f103";
+			background-color:  #0783a6;
+		}
+
+		.download-btn::before{
+			content: "\f103";
+			background-color: #0783a6;
+		}
+
+		.download-btn{
+			background-color: #40acc9;
+		}
+
+		.download-btn:hover{
+			background-color: #2c8da8;
+		}
+
+		.download-btn:active{
+			background-color: #3c6b78;
+		}
+
+		/*..............................................*/
+
+		.button3{
+			padding:20px 50px;
+			border-radius: 50px;
+			border:none;
+			box-shadow: 0 5px 2px rgba(0,0,0,0.4);
+
+			background: linear-gradient(
+				45deg,
+				blue,
+				transparent,
+				blue,
+				transparent
+				);
+			background-size: 200%;
+
+			transition: all 1s;
+
+		}
+
+		.button3:hover{
+			background-position: right;
+		}
+
+		.button3:active{
+			box-shadow: 0 3px 2px rgba(0,0,0,0.2);
+		}
+
+		/*................................................*/
+
+
+		.button4{
+
+		}
+
+
+
+
+
+		/*..........................................................*/
+
+
+		.button5{
+
+		}
+
+
+
+
+		/*.........................................................*/
+
+		.button6{
+			padding: 20px 60px;
+			border-color: red;
+			margin: 20px;
+
+			background-color: #000;
+			color:#fff;
+			overflow: hidden;
+
+			position: relative;
+		}
+
+		.button6::before{
+			content: "";
+
+			width:100%;
+			height: 100%;
+
+			background: linear-gradient(
+				45deg,
+				transparent,
+				red,
+				transparent
+				);
+
+			/*background-size: 300px;*/
+
+			position:absolute;
+			left:0;
+			top:0;
+
+			transform: translateX(-100%);
+			transition: all 1s;
+		}
+
+		.button6:hover::before{
+			transform: translateX(100%);
+		}
+
+		.button6:hover{
+			box-shadow: 1px 1px 25px 10px red;
+
+			/*box-shadow: 1px 1px 50px red,1px 1px 50px red;*/
+		}
+
+		/*.......................................................*/
+
+		.button7{
+			width:300px;
+			height: 60px;
+			border: none;
+
+			background-color: #000;
+			box-shadow: 2px 2px 4px gray;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.button7 span{
+			display: block;
+			color: #fff;
+			text-transform: uppercase;
+			letter-spacing: 5px;
+
+			transform: scaleX(0.6);
+			transform-origin: left;
+			transition: all 1s;
+		}
+
+		.button7 em{
+			/*display: block;*/
+			width: 100%;
+			height: 1px;
+			background-color: #fff;
+
+			position: absolute;
+			left:0;
+			top:50%;
+
+			transform: scaleX(0.25);
+			transform-origin: right;
+			transition: all 1s;
+		}
+
+		.button7:hover span{
+			color: yellow;
+		}
+
+		.button7:hover em{
+			left: -15%;
+		}
+
+		.button7::before{
+			content: "";
+
+			width: 100%;
+			height: 40%;
+			background-color: #fff;
+
+			position: absolute;
+			left:0;
+			top:0;
+
+			transform: translateX(-100%);
+			transition: all 1s;
+		}
+
+		.button7::after{
+			content: "";
+
+			width: 100%;
+			height: 40%;
+			background-color: #fff;
+
+			position: absolute;
+			left:0;
+			bottom:0;
+
+			transform: translateX(100%);
+			transition: all 1s;
+		}
+
+		.button7:hover::before{
+			transform: translateX(90%) skew(45deg);
+		}
+
+		.button7:hover::after{
+			transform: translateX(-90%) skew(45deg);
+		}
+		/*...................................................*/
+
+		.button8{
+			padding: 20px 60px;
+			margin: 10px 15px;
+			background-color: none;
+			border:none;
+			position: relative;
+		}
+
+		.button8:before{
+			content:'';
+
+			width:100%;
+			height: 100%;
+			background-color: skyblue;
+
+			position: absolute;
+			left:-4px;
+			top:-4px;
+
+			mix-blend-mode: multiply;
+		}
+
+		.button8:hover::before{
+			left: 20px;
+			top:-5px;
+
+			box-shadow: 10px -10px 0 steelblue;
+		}
+
+		.button8:after{
+			content:'';
+
+			width:100%;
+			height: 100%;
+			background-color: steelblue;
+
+			position: absolute;
+			left:0px;
+			top:0px;
+
+			mix-blend-mode: multiply;
+		}
+
+		.button8:hover::after{
+			left: -3px;
+			top:10px;
+
+			box-shadow: 10px -10px 0 skyblue;
+		}
+
+		/*....................................................*/
+
+		.button9{
+			padding: 30px 60px;
+			border-radius: 50px;
+			background-color: red;
+			color: #fff;
+			text-transform: uppercase;
+
+			border: none;
+
+			position: relative;
+		}
+
+		.button9::before , .button9::after{
+			content: "";
+
+			width:100%;
+			height: 100%;
+
+			background-color: mediumvioletred;
+
+			position: absolute;
+			left:0px;
+			top:0px;
+
+			opacity: 1;
+
+			border-radius: 50px;
+
+			transition: all 1s;
+
+			z-index: -1;
+		}
+
+		.button9:hover::before{
+			left: -25px;
+			top: -10px;
+			transform: scale(1.2);
+			opacity: 0;
+		}
+
+		.button9:hover::after{
+			left: 25px;
+			bottom:10px;
+			transform: scale(1.2);
+			opacity: 0;
+			transition-delay: 0.5s;
+		}
+
+		.button9:hover{
+			box-shadow: -2px 5px 5px #000;
+			transition-delay: 1.5s;
+		}
+
+		/*.....................................................*/
+
+		.button10{
+			width:200px;
+			height: 70px;
+			background-color: gray;
+			border:none;
+			border-radius: 10px;
+			position: relative;
+
+		}
+
+		.button10 .line{
+			width: 5px;
+			height: 5px;
+			background-color: transparent;
+			border-radius: 10px;
+
+			transform: translate(-50%);
+
+			position: absolute;
+			left:50%;
+			top:0;
+
+			transition: all 1s;
+		}
+
+		.button10:hover .line{
+			width:200px;
+			height: 70px;
+			border-bottom: 1px solid #f4f4f4;
+			border-radius: 10px;
+		}
+
+		.button10:hover{
+			background-color: #555;
+		}
+		/*..........................................*/
+
+		.button11{
+			width:150px;
+			height: 60px;
+			border: none;
+			border-radius: 50px;
+			
+
+			background: linear-gradient(
+				45deg,
+				violet,
+				skyblue,
+				violet
+				);
+
+			position: relative;
+		}
+
+		.button11::before{
+			content: "10% off";
+
+			/*display: inline-block;*/
+			width:60px;
+			background-color: orange;
+			position: absolute;
+			left:70px;
+			top:-10px;
+			padding: 5px;
+			border-radius: 20px;
+
+			/*margin-left: -20px;
+			margin-top: -20px;*/
+
+			transition: all 1s;
+		}
+
+		.button11:hover::before{
+			background-color: red;
+		}
+
+		/*........................................*/
+
+		.button12{
+			padding: 20px 60px;
+			background-color: darkblue;
+			border: none;
+			position: relative;
+		}
+
+		.button12::before{
+			content: "";
+			width: 20px;
+			height: 20px;
+
+			position: absolute;
+			left:-5px;
+			top:-5px;
+
+			border-left: 2px solid steelblue;
+			border-top: 2px solid steelblue;
+			transition: all 1s;
+		}
+
+		.button12::after{
+			content: "";
+			width: 20px;
+			height: 20px;
+
+			position: absolute;
+			right:-5px;
+			bottom:-5px;
+
+			/*background-color: blue;*/
+
+			border-right: 2px solid steelblue;
+			border-bottom: 2px solid steelblue;
+
+			transition: all 1s;
+		}
+
+		.button12:hover::before{
+			left:calc(100% - 20px + 5px);
+			border-left: none;
+			border-right: 2px solid steelblue;
+		}
+
+		.button12:hover::after{
+			right:calc(100% - 20px + 5px);
+			border-right:none;
+			border-left: 2px solid steelblue;
+		}
+
+		/*....................................................*/
+
+		.button13{
+			display: flex;
+			width:300px;
+			height: 100px;
+
+			border: 1px solid #fff;
+			background-color: gray;
+			position: relative;
+		}
+
+		.button13 span{
+			width:100%;
+			color: #fff;
+			text-transform: uppercase;
+			letter-spacing: 4px;
+			font-weight: 600;
+			text-align: center;
+			line-height: 100px;
+			/*background-color: green;*/
+
+			position: absolute;
+		}
+
+		.button13 em{
+			width: 100%;
+			height: 100%;
+
+			background-color: #fff;
+			transform-origin: right;
+			transform: scaleX(0);
+			transition: all 1s;
+		}
+
+		.btn em:nth-child(1){
+			transition-delay: .02s;
+		}
+
+		.btn em:nth-child(2){
+			transition-delay: .04s;
+		}
+
+
+		.btn em:nth-child(3){
+			transition-delay: .06s;
+		}
+
+		.btn em:nth-child(4){
+			transition-delay: .09s;
+		}
+
+		.btn em:nth-child(5){
+			transition-delay: .10s;
+		}
+
+		.btn em:nth-child(6){
+			transition-delay: .12s;
+		}
+
+		.btn em:nth-child(7){
+			transition-delay: .14s;
+		}
+
+		.btn em:nth-child(8){
+			transition-delay: .16s;
+		}
+
+		.btn em:nth-child(9){
+			transition-delay: .18s;
+		}
+
+		.btn em:nth-child(10){
+			transition-delay: .20S;
+		}
+
+		.button13:hover span{
+			color: #000;
+		}
+
+		.button13:hover em{
+			transform: scaleX(1);
+		}
+
+
+		/*......................................................*/
+
+		.button14{
+			width:200px;
+			height: 200px;
+			font-size: 12px;
+			color: red;
+			
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 4px;
+			line-height: 200px;
+			text-align: center;
+
+			position: relative;
+		}
+
+		.button14::before{
+			content: "";
+
+			width: 100%;
+			height: 100%;
+
+			border:3px solid red;
+			border-radius: 5px;
+
+			position: absolute;
+			left:0;
+			top:0;
+			transition: all 1s;
+		}
+
+		.button14::after{
+			content: "";
+
+			width: 100%;
+			height: 100%;
+
+			background-color: #222;
+			border-radius: 5px;
+
+			position: absolute;
+			left:0;
+			top:0;
+
+			transform: rotate(45deg);
+			transition: all 1s;
+			z-index: -1;
+		}
+
+		.button14:hover::before{
+			transform: rotate(45deg);
+			border: 3px solid skyblue;
+		}
+
+		.button14:hover::after{
+			transform: scale(0.6) rotate(45deg);
+			background-color: blue;
+		}
+
+		.button14:hover{
+			color: skyblue;
+		}
+
+
+	</style>
+</head>
+<body>
+	
+	<div>
+		
+		<a href="#">click me</a>
+
+		<button type="button" class="hover1">Hover me</button>
+
+		<button type="button" class="hover2">Hover me2</button>
+
+		<button type="button" class="hover3">Hover me3</button>
+
+		<button type="button" class="hover4">Hover me4</button>
+
+		<button type="button" class="hover5">Hover me5</button>
+
+		<button type="button" class="hover6">Hover me6</button>
+
+		<button type="button" class="hover7">Hover me7</button>
+
+		<button type="button" class="hover8">Hover me8</button>
+
+		<button type="button" class="hover9">Hover me9</button>
+
+		<button type="button" class="hover10">Hover me10</button>
+
+		<button type="button" class="hover11">Hover me11</button>
+
+		<button type="button" class="hover12">Hover me12</button>
+
+		<button type="button" class="hover13">Hover me13</button>
+
+		<button type="button" class="hover14">Hover me14</button>
+
+		<!-- .............................................. -->
+
+		<button type="button" class="button1">hover me<span></span></button>
+
+		<button type="button" class="btn upload-btn">upload button</button>
+		<button type="button" class="btn download-btn">download button</button>
+
+		<button type="button" class="button3">Button</button>
+
+		<button type="button" class="button4">Hover me</button>
+
+		<button type="button" class="button5">Hover me</button>
+
+		<button type="button" class="button6">Hover me</button>
+
+		<button type="button" class="button7"><span>Read more...</span><em></em></button>
+
+		<button type="button" class="button8">Hover me</button>
+
+		<button type="button" class="button9">Hover me</button>
+
+		<button type="button" class="button10">Hover me<span class="line"></span></button>
+
+		<button type="button" class="button11">Hover me</button>
+
+		<button type="button" class="button12">Hover me</button>
+
+		<button type="button" class="button13">
+			<em></em>
+			<em></em>
+			<em></em>
+			<em></em>
+			<em></em>
+			<em></em>
+			<em></em>
+			<em></em>
+			<em></em>
+			<em></em>
+			<span>hover me</span>
+		</button>
+
+		<div class="button14">Hover me</div>
+
+
+
+
+
+		
+
+
+
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Button Hover Effect</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<style type="text/css">
+		body{
+			font-family: sans-serif;
+			height: 100vh;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		a{
+			width:200px;
+			text-decoration: none;
+			background-color: green;
+			color: #fff;
+			font-size: 20px;
+			text-align: center;
+			padding: 15px 0;
+
+			position: relative;
+		}
+
+		/*a::before{
+			content: 'Hover me smile';
+
+			content: "";
+			width:100%;
+			height: 100%;
+
+			background-color: green;
+			color: #fff;
+			position: absolute;
+			left:0;
+			top:0;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			opacity: 0;
+
+			transition: all 1s;
+		}
+
+		a:hover::before{
+			opacity: 1;
+		}*/
+
+		a span{
+			position: relative;
+
+			transition: padding-right 1s;
+		}
+
+		a span::after{
+			content: "\f118";  /*special espcase caracter*  == backward slect */
+			font-family: "Font Awesome 5 Free"; /*we need to same with font family*/
+
+			position: absolute;
+			right:0;
+			top:0;
+
+			opacity: 0;
+			transition: all 1s;
+		}
+
+		a:hover span::after{
+			opacity: 1;
+		}
+
+		a:hover span{
+			padding-right: 30px;
+		}
+
+	</style>
+</head>
+<body>
+
+	<a href="#">hover me<span></span></a>
+
+</body>
+</html>

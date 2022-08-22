@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Key Frame</title>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+
+		div{
+			width: 150px;
+			height: 150px;
+
+			background-color: blue;
+
+			/*animation-name: myani;
+			animation-duration: 3s;
+			animation-fill-mode: forwards;*/
+
+			/*animation-iteration-count: 3; it is counting how loop it*/
+
+			/*animation-iteration-count: infinite;*/
+
+			/*animation-timing-function: ease;*/
+			/*animation-timing-function: ease-in;*/
+			/*animation-timing-function:ease-out;*/
+			/*animation-timing-function:ease-in-out;*/
+			/*animation-timing-function:linear;*/
+
+			/*animation-direction: normal;*/ /*move from start to end*/
+			/*animation-direction: reverse;*//* move from end to start*/
+			/*animation-direction: alternate;*/ /* move like normal but it stop at the end*/
+
+			/*animation-iteration-count: infinite; move from end to start again and again
+			animation-direction: alternate-reverse; */
+
+						/*name  ,  duration,  iteration,   animation tf, animation direction*/
+
+			animation: myani 3s 2 linear alternate;
+		}
+
+		@keyframes myani{
+			0%{
+				transform: translate(0);
+			}
+
+			50%{
+				transform: translate(800px);
+			}
+
+			100%{
+				transform: translate(800px,800px);
+			}
+		}
+		
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

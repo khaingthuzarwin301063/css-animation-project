@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Keyframe</title>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+		}
+
+		.box1{
+			width:150px;
+			height: 150px;
+			background-color: steelblue;
+			/*animation-name: myani;*/
+			animation-duration: 5s;
+
+			/*animation-fill-mode: forwards;*/
+			animation-fill-mode: backwards; /*Default !!this can return back its place*/
+
+			animation-delay: 3s;
+		}
+
+		.box2{
+			width:150px;
+			height: 150px;
+			background-color: red;
+			/*animation-name: mycode;*/
+			animation-duration: 3s;
+			/*animation-fill-mode: forwards;*/
+			animation-fill-mode: backwards;
+		}
+
+		.box3{
+			width:150px;
+			height: 150px;
+			background-color: pink;
+
+			position: relative;  /*if you want to here it, you can write position: relative; without position: absolute;*/
+
+			animation-name: myshake;
+			animation-duration: 3s;
+		}
+
+
+		@keyframes myani{
+			0%{
+				transform: translate(0px);
+			}
+
+			50%{
+				transform: translateX(800px);
+			}
+			100%{
+				transform: translateX(800px) translateY(800px);
+			}
+
+
+		}
+
+		@keyframes mycode{
+			0%{
+				background-color: violet;
+				transform: translate(0);
+			}
+
+			25%{
+				background-color: red;
+				transform: translate(300px);
+			}
+
+			50%{
+				background-color: blue;
+				transform: translate(300px,300px);
+			}
+
+			75%{
+				background-color: green;
+				transform: translate(0,300px);
+			}
+
+			100%{
+				background-color: black;
+				transform: translate(0);
+			}
+		}
+
+		@keyframes myshake{   /*this can give with decimal number*/
+			12.5%{
+				top:-100px;
+			}
+
+			25%{
+				top:100px;
+			}
+
+			37.5%{
+				top:-50px;
+			}
+
+			50%{
+				top:50px;
+			}
+
+			62.5%{
+				top:-25px;
+			}
+
+			75%{
+				top:25px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+
+	<hr/>
+
+	<div class="box2"></div>
+
+	<hr/>
+
+	<div class="box3"></div>
+
+</body>
+</html>

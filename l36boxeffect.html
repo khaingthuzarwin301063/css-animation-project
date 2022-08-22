@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Box Effect</title>
+	<style type="text/css">
+		body{
+			font-family: sans-serif;
+			height: 100vh;
+			background-color: #000;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.box{
+			width:200px;
+			height: 200px;
+			font-size: 12px;
+			
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 4px;
+			line-height: 200px;
+			text-align: center;
+
+			position: relative;
+		}
+
+		.box::before{
+			content: '';
+
+			/*width: 100%;  if you don't want to write this,you can write under the position absolute (right:0, button:0)
+			height: 100%;*/
+
+			position: absolute;
+			left:0;
+			top:0;
+			right:0;
+			bottom:0;
+
+			border: 3px solid skyblue;
+			border-radius: 3px;
+
+			transition: all .4s;
+		}
+
+
+		.box::after{
+			content: '';
+
+			background-color: #fff;
+			border-radius: 5px;
+
+			position: absolute;
+			left:0;
+			top:0;
+			right:0;
+			bottom:0;
+
+			transform: rotate(45deg);
+			transition: all 1s;
+
+			z-index: -1;
+		}
+
+		.box:hover::before{
+			transform: rotate(45deg);
+		}
+		
+		.box:hover::after{
+			transform: scale(0.7) rotate(45deg);
+		}
+
+		.box:hover{
+			color:skyblue;
+		}
+		
+
+	</style>
+</head>
+<body>
+
+	<div class="box">hover me</div>
+
+</body>
+</html>

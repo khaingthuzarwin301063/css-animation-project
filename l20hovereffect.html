@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Button Effect</title>
+	<style type="text/css">
+		body{
+			font-family: sans-serif;
+			height: 100vh;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		a{
+			display: block;
+			background-color: red;
+			color:#fff;
+			text-decoration: none;
+			font-size: 20px;
+			border: 5px solid #000;
+			padding: 40px 80px;
+			margin-bottom: 20px;
+			overflow: hidden;
+
+			position: relative;
+			transition: background 1s;
+		}
+
+		a::before{
+			content: "";
+			width:100%;
+			height:100%;
+			background:linear-gradient(
+				20deg,
+				transparent 70%,
+				yellow 30%);
+
+			/*background-repeat: repeat;*/
+			background-size: 20px;
+
+			clip-path: ellipse(50% 100%); /*it work in x and y .*/
+
+			position: absolute;
+			left:0;
+			top:0;
+
+			transform: translateY(-100%);
+			transition: transform 1s;
+
+			z-index:1;
+		}
+
+		a::after{
+			content: "";
+			width:100%;
+			height:100%;
+			background:linear-gradient(
+				200deg,
+				transparent 70%,
+				yellow 30%);
+
+			background-size: 20px;
+			clip-path: ellipse(50% 100%);
+
+			/*background-repeat: repeat;*/
+
+			position: absolute;
+			left:0;
+			top:0;
+
+			transform: translateY(100%);
+			transition: transform 1s;
+
+			z-index: 1;
+
+		}
+
+		a:hover::before,a:hover::after{
+			transform: translateY(0%);
+		}
+
+		a:hover{
+			background: #000;
+		}
+
+		/*...............................................................*/
+
+		button{
+			background: none;
+			font-size: 20px;
+			border: 5px solid #000;
+			padding: 40px 80px;
+			overflow: hidden;
+			position: relative;
+
+			transition: background-color .5s;
+		}
+
+		button::before{
+			content: "Press me";
+			width:100%;
+			height:100%;
+
+			background: linear-gradient(
+				90deg,
+				transparent 70%,
+				red 30%);
+			color:#fff;
+
+			background-size: 20px;
+
+			position: absolute;
+			left:0;
+			top:0;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			transform: translate(100%);
+			transition: all 1s;
+		}
+
+		button:hover::before{
+			transform: translate(0%);
+		}
+		button:hover{
+			background-color: #000;
+		}
+
+
+		button::after{
+			content: "";
+			width:100%;
+			height:100%;
+			color:#fff;
+
+			position: absolute;
+			left:0;
+			top:0;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			transform: scale(0);
+			transition: all 1s;
+		}
+
+		button:active::before{
+			content: "";
+			transform: translateY(-110%);
+		}
+
+		button:active::after{
+			content: "Thank you";
+			transform: scale(1) rotate(360deg);
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<div>
+
+		<a href="#">Hover Me</a>
+
+		<button type="button">Hover me</button>
+
+	</div>
+
+</body>
+</html>

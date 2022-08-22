@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Spinner</title>
+	<style type="text/css">
+		body{
+			height: 100vh;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.spinner{
+			width: 30px;
+			height: 30px;
+			animation-name: myspinner;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+
+		@keyframes myspinner{
+			0%{
+				transform: rotate(0turn) scale(1);
+			}
+
+			25%{
+				transform: rotate(1turn) scale(1);
+			}
+
+			50%{
+				transform: rotate(1turn) scale(1.5);
+			}
+
+			75%{
+				transform: rotate(0turn) scale(1.5);
+			}
+
+			100%{
+				transform: rotate(0turn) scale(2);
+			}
+		}
+	</style>
+</head>
+<body>
+	<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG553umgn8sIn4Hr1PcQVK-9hAdN6j6Ez66g&usqp=CAU" class="spinner" alt="spinner">
+</body>
+</html>
+
+<!-- 17AN -->

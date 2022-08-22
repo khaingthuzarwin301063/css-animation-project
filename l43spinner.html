@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Spinner by css</title>
+	<style type="text/css">
+		body{
+			height:100vh;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: #000;
+		}
+
+		.spinnerone,.spinnertwo,.spinnerthree,.spinnerfour{
+			width:100px;
+			height: 100px;
+			border-radius: 50%;
+			border:15px solid #f1f1f1;
+			border-top: 15px solid steelblue;
+
+			animation: myani 2s linear infinite;
+		}
+
+		.spinnertwo{
+			border-top: 15px solid deepskyblue;
+			border-bottom: 15px solid pink;
+		}
+
+		.spinnerthree{
+			border-top: 15px solid deepskyblue;
+			border-bottom: 15px solid pink;
+			border-left:15px solid orange;
+		}
+
+		.spinnerfour{
+			border-top: 15px solid deepskyblue;
+			border-bottom: 15px solid pink;
+			border-left:15px solid orange;
+			border-right: 15px solid red;
+		}
+
+		@keyframes myani{
+			from{
+				transform: rotate(0);
+			}
+
+			to{
+				transform: rotate(360deg);
+			}
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="spinnerone"></div>
+	<div class="spinnertwo"></div>
+	<div class="spinnerthree"></div>
+	<div class="spinnerfour"></div>
+</body>
+</html>

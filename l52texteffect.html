@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Text Effect</title>
+	<style type="text/css">
+		body{
+			font-family: sans-serif;
+			background-color: #000;
+			height: 100vh;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.box{
+			background: url('./img/banner.png');
+
+			animation-name: myani;
+			animation-duration: 10s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+			animation-direction: alternate-reverse;
+
+			-webkit-background-clip: text;  /*I want it this image background as text*/
+		}
+
+		.box h1{
+			color: transparent;
+			font-size: 100px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+
+			-webkit-text-stroke: 2px deeppink;
+		}
+
+		@keyframes myani{
+			from{					/*left top*/
+				background-position: 0 0;
+			}
+			to{
+				background-position: 0 800px;
+			}
+		}
+	</style>
+</head>
+<body>
+
+	<div class="box">
+		<h1>Data Land Technology</h1>
+	</div>
+</body>
+</html>
+
+<!-- 7DONE -->

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Transform Origin</title>
+	<style type="text/css">
+		body{
+			height:100vh;
+
+			display:flex;
+			justify-content:center;
+			align-items: center;
+
+			transition: transform 2s;
+		} 
+
+		img{
+			width:200px;
+			height: 150px;
+
+			transition: transform 2s;
+
+			/*transform-origin: top;
+			transform-origin: bottom;
+			transform-origin: left;*/
+			transform-origin: right;
+
+			/*transform-origin: left top;*/
+			/*transform-origin: right top;*/
+			/*transform-origin: left bottom;*/
+			/*transform-origin: right bottom;*/
+
+			/*length*/
+
+			transform-origin: left center;
+			/*transform-origin: 0;*/
+
+
+
+			/*transform-origin: 50%;*/
+			/*transform-origin: 100px;*/
+
+			/*x,y*/
+
+			/*transform-origin: 0;*/
+			/*transform-origin: 0 0;*/
+			/*transform-origin: 0 50%;*/
+			/*transform-origin: 30% 50%;*/
+
+			/*transform-origin: 50% 0;*/
+
+			/*transform-origin: 100px 75px;*/
+
+			}
+
+		img:hover{
+			transform: skewY(30deg);
+		}
+
+
+
+
+
+	</style>
+</head>
+<body>
+
+
+
+
+	<div>
+
+		<img src="./img/pic1.jpg" id="img" class="img" alt="dog">
+
+	</div>
+
+</body>
+</html>

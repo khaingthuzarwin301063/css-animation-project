@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Button Effect</title>
+	<style type="text/css">
+		body{
+			font-family: sans-serif;
+			background-color: #000;
+
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.download-btn{
+			widows: 400px;
+			height: 80px;
+			background-color: steelblue;
+			color: #fff;
+			text-decoration: none;
+			text-align: center;
+			line-height: 80px;
+			padding: 20px 40px;
+
+			/*the root of element fomt-size*/
+			 /*1rem= 16px*/
+			font-size: 2.5rem;
+			font-weight: bold;
+
+			border-radius: 20px;
+		}
+
+		.download-btn:hover{
+			color: #000;
+		}
+
+		.download-btn:hover{
+			/*background: linear-gradient(*/ /*background can overwrite*/
+			background-image: linear-gradient(
+				134deg,
+				transparent 10%,
+				#f4f4f4 10% 20%,
+				transparent 20% 30%,
+				#f4f4f4 30% 40%,
+				transparent 40% 50%,
+				#f4f4f4 50% 60%,
+				transparent 60% 70%,
+				#f4f4f4 70% 80%,
+				transparent 80% 90%,
+				#f4f4f4 90% 100%
+			);
+
+			background-size: 30%;
+			animation: myani 5s linear infinite;
+		}
+
+		@keyframes myani{
+			from{
+				background-position: 0 0;
+			}
+			to{
+				background-position: 400px 0;
+			}
+		}
+
+
+	</style>
+</head>
+<body>
+	<a href="#" class="download-btn">hover me</a>
+</body>
+</html>

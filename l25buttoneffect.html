@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Button Effect</title>
+	<style>
+		body{
+			height:100vh;
+			font-family: sans-serif;
+
+			display:flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.btn{
+			width: 200px;
+			height: 60px;
+			font-size: 20px;
+			background: linear-gradient(
+				60deg,
+				blue,
+				skyblue,
+				blue,
+				skyblue
+			);
+			background-size: 300%;
+
+			color: #fff;
+			border: none;
+			border-radius: 50px;
+			box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+			cursor: pointer;
+
+			transition: background-position 1s ease-in-out;
+		}
+
+		.btn:hover{
+			background-position: right;
+		}
+
+		.btn:active{
+			box-shadow: 0 3px 15px rgba(0,0,0,0.4);
+		}
+
+		
+	</style>
+</head>
+<body>
+	<button type="button" class="btn">Button</button>
+</body>
+</html>

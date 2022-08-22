@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Background</title>
+	<style type="text/css">
+		body{
+			background-color: #000;
+			height: 100vh;
+
+			padding: 0;
+			margin: 0;
+
+			overflow: hidden;
+
+			/*display: flex;
+			justify-content: center;
+			align-items: center;*/
+		}
+
+		.container{
+			width: 100%;
+			height: 100%;
+		}
+
+		.heart{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			animation-name: myani;
+			animation-duration: 2s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+
+			transform: rotate(-45deg);
+
+			position: relative;
+		}
+
+		.heart::before{
+			content: "";
+			width: 100%;
+			height: 100%;
+
+			background-color: red;
+			border-radius: 50%;
+
+			position: absolute;
+			left: 0;
+			right: 0;
+
+			transform: translateY(-50%);
+		}
+
+		.heart::after{
+			content: "";
+			width: 100%;
+			height: 100%;
+
+			background-color: red;
+			border-radius: 50%;
+
+			position: absolute;
+			left: 0;
+			right: 0;
+
+			transform: translateX(50%);
+		}
+
+		.heart:nth-of-type(1){
+			width: 10px;
+			height: 10px ;
+			left: 25%;
+			animation-delay: 1s;
+		}
+
+		.heart:nth-of-type(2){
+			width: 20px;
+			height: 20px;
+			left:30% ;
+			animation-delay: 1.2s;
+		}
+		.heart:nth-of-type(3){
+			width: 40px;
+			height: 40px;
+			left: 40%;
+			animation-delay: 1.4s;
+		}
+
+		.heart:nth-of-type(4){
+			width: 30px;
+			height: 30px;
+			left:20% ;
+			animation-delay: 1.6s;
+		}
+
+		.heart:nth-of-type(5){
+			width: 20px;
+			height:20px ;
+			left: 95%;
+			animation-delay: 1.8s;
+		}
+
+		.heart:nth-of-type(6){
+			width: 50px;
+			height: 50px;
+			left: 75%;
+			animation-delay: 2s;
+		}
+
+		.heart:nth-of-type(7){
+			width: 30px;
+			height: 30px;
+			left: 45%;
+			animation-delay: 2.2s;
+		}
+
+		.heart:nth-of-type(8){
+			width: 70px;
+			height: ;
+			left: 58%;
+			animation-delay: 2.4s;
+		}
+
+		.heart:nth-of-type(9){
+			width:30px ;
+			height:30px ;
+			left:70% ;
+			animation-delay: 2.6s;
+		}
+
+		.heart:nth-of-type(10){
+			width:20px ;
+			height: 20px;
+			left:84% ;
+			animation-delay: 2.8s;
+		}
+
+		@keyframes myani{
+			from{
+				top: 0;
+				opacity: 1;
+			}
+
+			to{
+				top: 100%;
+				transform: rotate(180deg) scale(0.5);
+				opacity: 0;
+			}
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="heart"></div>
+		<div class="heart"></div>
+		<div class="heart"></div>
+		<div class="heart"></div>
+		<div class="heart"></div>
+		<div class="heart"></div>
+		<div class="heart"></div>
+		<div class="heart"></div>
+		<div class="heart"></div>
+		<div class="heart"></div>
+		
+	</div>
+
+</body>
+</html>

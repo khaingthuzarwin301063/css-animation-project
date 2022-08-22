@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clip path</title>
+	<style type="text/css">
+		.shape{
+			width:500px;
+			height: 300px;
+			background: red;
+		}
+
+		#circle{
+			clip-path: circle();
+
+			clip-path: circle(100%);
+			clip-path: circle(200%);
+			clip-path: circle(300%);
+
+			circle(shape-radius at position)
+			clip-path: circle(200px at center);
+			clip-path: circle(200px at right);
+			clip-path: circle(200px at left);
+			clip-path: circle(200px at top);
+			clip-path: circle(200px at bottom);
+
+			clip-path: circle(100px at 0);
+			clip-path: circle(200px at 100px);
+
+
+			/*circle(shape-radius at width height)*/
+			clip-path: circle(200px at 30px 20px);
+			clip-path: circle(300px at 30px 300px);
+
+
+
+
+			clip-path: circle(30%);
+			clip-path: circle(50%);
+
+			clip-path: circle(50% at 50% 20%);
+
+
+		}
+
+		#polygon{
+			clip-path: polygon();
+		}
+
+		#ellipse{
+			clip-path: ellipse(150% 50%);
+
+			clip-path: ellipse(30% 60%);
+			clip-path: ellipse(100% 60%);
+			clip-path:ellipse(100% 30%);
+
+			/*ellipse(shape-radius at position: )*/
+			clip-path: ellipse(150px 50px at center);
+			clip-path: ellipse(150px 50px at right);  /*left,top,bottom*/
+
+			/*ellipse(shape-radius at width)*/
+			clip-path: ellipse(150px 50px at 50%);
+
+
+			ellipse(shape-radius at width height)
+			clip-path: ellipse(150px 50px at 50% 20%);
+
+
+
+
+
+
+		}
+
+	</style>
+</head>
+<body>
+		<img src="./img/pic1.jpg" id="circle" class="shape" alt="circle">
+
+	<hr/>
+
+		<img src="./img/pic1.jpg" id="polygon" class="shape" alt="polygon">
+
+		<hr/>
+
+		<img src="./img/pic1.jpg" id="ellipse" class="shape" alt="ellipse">
+
+
+</body>
+</html>
+
+7EL
